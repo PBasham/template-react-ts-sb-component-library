@@ -1,5 +1,5 @@
 {
-    "name": "@pbasham/react-ts-sb-library-template",
+    "name": "@pbasham/template-react-ts-sb-component-library",
     "version": "0.0.1",
     "description": "React, typescript, and storybook componentlibrary template",
     "scripts": {
@@ -24,5 +24,8 @@
     "files": [
         "dist"
     ],
-    "types": "dist/index.d.ts"
+    "types": "dist/index.d.ts",
+    "publishConfig": {
+        "registry": "https://npm.pkg.github.com/pbasham"
+    }
 }
