@@ -28,5 +28,8 @@
     "types": "dist/index.d.ts",
     "publishConfig": {
         "registry": "https://npm.pkg.github.com/pbasham"
+    },
+    "dependencies": {
+        "rollup-plugin-peer-deps-external": "^2.2.4"
     }
 }
