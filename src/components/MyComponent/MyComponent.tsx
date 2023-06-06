@@ -6,8 +6,8 @@ import React, { FC } from 'react'
 import "../../assets/styling/colors.css"
 import "../../assets/styling/MyComponent.css"
 
-interface MyComponentProps {
-    label: string
+export interface MyComponentProps {
+    label?: string
 }
 
 const MyComponent: FC<MyComponentProps> = (props: MyComponentProps) => {
