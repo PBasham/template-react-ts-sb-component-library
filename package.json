@@ -1,6 +1,6 @@
 {
     "name": "@pbasham/template-react-ts-sb-component-library",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "description": "React, typescript, and storybook component library template",
     "scripts": {
         "rollup": "rollup -c"
