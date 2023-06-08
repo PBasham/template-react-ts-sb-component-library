@@ -29,8 +29,9 @@ const defaultParams: PbLightboxProps = {
         messageDivPadding: "1em",
 
 
-        wrapperFaddedBackground: true,
-        wrapperFaddedBackgroundColor: "rgba(149, 149, 149, .3)",
+        hasOverlayBackground: true,
+        overlayColor: undefined,
+        overlayOpacity: undefined,
         additionalWrapperClasses: undefined,
 
         padding: "1em",
@@ -104,4 +105,66 @@ const HasChildrenArgs: PbLightboxProps = {
     children: <h1 style={{textAlign: "center"}} >This is a childed passed into the children props.</h1>    
 }
 HasChildren.args = {...HasChildrenArgs}
+// * alignment --------------------------------------------------
+export const TitleAlignmentLeft: StoryFn = Template.bind({})
+const TitleAlignmentLeftArgs: PbLightboxProps = {
+    ...defaultParams,
+    title: "Lightbox with children.",
+    message: "This message is within the content section, and below, are children components that were passed in to me.",
+    titleAlignment: "left"
+}
+TitleAlignmentLeft.args = {...TitleAlignmentLeftArgs}
 
+export const TitleAlignmentCenter: StoryFn = Template.bind({})
+const TitleAlignmentCenterArgs: PbLightboxProps = {
+    ...defaultParams,
+    title: "Lightbox with children.",
+    message: "This message is within the content section, and below, are children components that were passed in to me.",
+    titleAlignment: "center"    
+}
+TitleAlignmentCenter.args = {...TitleAlignmentCenterArgs}
+
+export const TitleAlignmentRight: StoryFn = Template.bind({})
+const TitleAlignmentRightArgs: PbLightboxProps = {
+    ...defaultParams,
+    title: "Lightbox with children.",
+    message: "This message is within the content section, and below, are children components that were passed in to me.",
+    titleAlignment: "right"    
+}
+TitleAlignmentRight.args = {...TitleAlignmentRightArgs}
+// message alignment
+export const MessageAlignmentLeft: StoryFn = Template.bind({})
+const MessageAlignmentLeftArgs: PbLightboxProps = {
+    ...defaultParams,
+    title: "Lightbox with children.",
+    message: "This message is within the content section, and below, are children components that were passed in to me.",
+    messageAlighment: "left"
+}
+MessageAlignmentLeft.args = {...MessageAlignmentLeftArgs}
+
+export const MessageAlignmentCenter: StoryFn = Template.bind({})
+const MessageAlignmentCenterArgs: PbLightboxProps = {
+    ...defaultParams,
+    title: "Lightbox with children.",
+    message: "This message is within the content section, and below, are children components that were passed in to me.",
+    messageAlighment: "center"    
+}
+MessageAlignmentCenter.args = {...MessageAlignmentCenterArgs}
+
+export const MessageAlignmentRight: StoryFn = Template.bind({})
+const MessageAlignmentRightArgs: PbLightboxProps = {
+    ...defaultParams,
+    title: "Lightbox with children.",
+    message: "This message is within the content section, and below, are children components that were passed in to me.",
+    messageAlighment: "right"    
+}
+MessageAlignmentRight.args = {...MessageAlignmentRightArgs}
+
+export const MessageAlignmentJustify: StoryFn = Template.bind({})
+const MessageAlignmentJustifyArgs: PbLightboxProps = {
+    ...defaultParams,
+    title: "Lightbox with children.",
+    message: "This message is within the content section, and below, are children components that were passed in to me.",
+    messageAlighment: "justify"    
+}
+MessageAlignmentJustify.args = {...MessageAlignmentJustifyArgs}

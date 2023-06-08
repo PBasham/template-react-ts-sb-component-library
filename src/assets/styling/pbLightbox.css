@@ -13,26 +13,33 @@
     justify-content: center;
     align-items: center;
 
-
-    background-color: var(--color-wrapper-bg);
-
     z-index: 9999;
 }
-
+.pb-lb .overlay {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background-color: rebeccapurple;
+}
+.pb-lb .overlay.wrapper-color {
+    background-color: var(--color-wrapper-bg);
+}
+.pb-lb .overlay.no-wrapper-color {
+    background-color: transparent;
+}
 /* * LightBox -------------------------------------------------- */
 .pb-lb .lb-box {
     padding: 1em;
     width: clamp(300px, 80vw, 400px);    
     box-shadow: 0 0 2px 1px var(--color-box-shadow);
     background-color: var(--color-box-bg);
+    z-index: 9999;
 }
 
 /* * Lightbox header div -------------------------------------------------- */
 .pb-lb .lb-box-header-div {
     font-size: 1.5rem;
-    text-align: center;
 }
-
 /* * lightbox content div -------------------------------------------------- */
 .pb-lb .lb-box-content-div {}
 
@@ -41,7 +48,6 @@
     padding: 1em;
 
     font-size: 1rem;
-    text-align: center;
 }
 
 /* * Lightbox passed child div -------------------------------------------------- */

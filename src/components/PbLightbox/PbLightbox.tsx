@@ -39,11 +39,14 @@ export interface PbLightboxProps {
     /** Padding for Text in content of box. */
     messageDivPadding?: string
 
-    /** True will display fadded background on popup. False will not. Defaul is true. */
-    wrapperFaddedBackground?: boolean
+    /** True will display an overlay behind the popup. False will not. Defaul is true. */
+    hasOverlayBackground?: boolean
     /** Color of the fadded background. Leave as empty string if you want to overwrite with css class. */
-    wrapperFaddedBackgroundColor?: string
+    overlayColor?: string
+    /** Opacity of wrapper overlay */
+    overlayOpacity?: string
     /** Send custom css class for page wrapper for lightbox. */
+    additionalOverlayClasses?: string
     additionalWrapperClasses?: string
 
     /** Lightbox padding. Default 1em. */
@@ -120,9 +123,10 @@ const PbLightbox: FC<PbLightboxProps> = (props: PbLightboxProps) => {
         messageDivMargin,
         messageDivPadding,
 
-
-        wrapperFaddedBackground = true,
-        wrapperFaddedBackgroundColor,
+        hasOverlayBackground = true,
+        overlayColor,
+        overlayOpacity,
+        additionalOverlayClasses,
         additionalWrapperClasses,
 
         padding,
@@ -162,49 +166,49 @@ const PbLightbox: FC<PbLightboxProps> = (props: PbLightboxProps) => {
 
     } = props
 
-    const wrapperColor = wrapperFaddedBackground ? wrapperFaddedBackgroundColor : ""
+    const wrapperColor = hasOverlayBackground ? overlayColor : ""
 
     const passedWrapperStyles: CSSProperties = {
-        // backgroundColor: wrapperColor,
+    }
+    const passedOverlayStyles: CSSProperties = {
+        backgroundColor: wrapperColor,
+        opacity: overlayOpacity,
     }
     const passedLightboxStyles: CSSProperties = {
-        // padding: padding,
-        // height: height,
-        // width: width,
-        // backgroundColor: backgroundColor,
-        // borderRadius: borderRadius,
-        // boxShadow: boxShadow,
+        padding: padding,
+        height: height,
+        width: width,
+        backgroundColor: backgroundColor,
+        borderRadius: borderRadius,
+        boxShadow: boxShadow,
     }
     const passedTitleDivStyles: CSSProperties = {
-        // margin: titleDivMargin,
-        // padding: titleDivPadding,
+        margin: titleDivMargin,
+        padding: titleDivPadding,
 
-        // fontSize: titleSize,
-        // textAlign: titleAlignment,
+        fontSize: titleSize,
     }
     const passedTitleStyles: CSSProperties = {
-        // color: titleColor,
+        color: titleColor,
     }
     const passedContentDivStyles: CSSProperties = {
 
     }
     const passedMessageDivStyles: CSSProperties = {
-        // margin: messageDivMargin,
-        // padding: messageDivPadding,
+        margin: messageDivMargin,
+        padding: messageDivPadding,
 
-        // fontSize: messageSize,
-        // textAlign: messageAlighment,
+        fontSize: messageSize,
     }
     const passedMessageStyles: CSSProperties = {
-        // color: messageColor,
+        color: messageColor,
     }
     const passedButtonDivStyles: CSSProperties = {
-        // display: "flex",
-        // justifyContent: btnHorizontalAlignment,
-        // alignItems: btnVerticalAlignment,
-        // gap: btnGap,
+        justifyContent: btnHorizontalAlignment,
+        alignItems: btnVerticalAlignment,
+        gap: btnGap,
 
-        // padding: btnAreaPadding,
+        padding: btnAreaPadding,
     }
 
     const statusColorOk = "rgb(221, 255, 221)"
@@ -241,8 +245,9 @@ const PbLightbox: FC<PbLightboxProps> = (props: PbLightboxProps) => {
     }
 
     let titleTextAlignment = titleAlignment ? textAlignmentOptions[titleAlignment] : ""
-    console.log(titleTextAlignment)
+    let messageTextAlignment = messageAlighment ? textAlignmentOptions[messageAlighment] : ""
 
+    let overlayColorClass = hasOverlayBackground ? "wrapper-color" : "no-wrapper-color"
 
     if (isLightboxVisible) {
         return (
@@ -250,13 +255,14 @@ const PbLightbox: FC<PbLightboxProps> = (props: PbLightboxProps) => {
                 className={`pb-lb lb-wrapper ${additionalWrapperClasses}`}
                 style={{ ...passedWrapperStyles }}
             >
+                <div className={`overlay ${overlayColorClass} ${additionalOverlayClasses}`} style={{ ...passedOverlayStyles }} />
                 <div
                     className={`lb-box ${additionalLightboxClasses}`}
                     style={{ ...passedLightboxStyles }}
                 >
 
                     <div
-                        className="lb-box-header-div"
+                        className={`lb-box-header-div ${titleTextAlignment}`}
                         style={{ ...passedTitleDivStyles }}
                     >
                         <p style={{ ...passedTitleStyles }} >{title}</p>
@@ -266,7 +272,7 @@ const PbLightbox: FC<PbLightboxProps> = (props: PbLightboxProps) => {
                         className="lb-box-content-div"
                         style={{ ...passedContentDivStyles }}
                     >
-                        <div className="message-div"
+                        <div className={`message-div ${messageTextAlignment}`}
                             style={{ ...passedMessageDivStyles }}
                         >
                             <p style={{ ...passedMessageStyles }} >{message}</p>
