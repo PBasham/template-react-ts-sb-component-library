@@ -1,10 +1,10 @@
 import React from "react";
 import { render } from "@testing-library/react"
 
-import MyComponent from "./MyComponent";
+import PbLightbox from "./PbLightbox";
 
 describe("Button", () => {
     test("renders the MyComponent componenet", () => {
-        render(<MyComponent label="Press me!" />)
+        render(<PbLightbox label="Press me!" />)
     })
 })

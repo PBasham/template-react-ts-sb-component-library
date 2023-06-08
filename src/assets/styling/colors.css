@@ -1,4 +1,7 @@
 :root {
-    /* * Standard */
-    --color-primary: "blue";
+    /* * wrapper */
+    --color-wrapper-bg: rgba(149, 149, 149, .3);
+    /* * box */
+    --color-box-bg: white;
+    --color-box-shadow: rgba(149, 149, 149, 1);
 }

@@ -1,0 +1,81 @@
+/* * initial classes passed on the wrapper -------------------------------------------------- */
+.pb-lb {}
+
+/* * Wrapper -------------------------------------------------- */
+.pb-lb.lb-wrapper {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+    background-color: var(--color-wrapper-bg);
+
+    z-index: 9999;
+}
+
+/* * LightBox -------------------------------------------------- */
+.pb-lb .lb-box {
+    padding: 1em;
+    width: clamp(300px, 80vw, 400px);    
+    box-shadow: 0 0 2px 1px var(--color-box-shadow);
+    background-color: var(--color-box-bg);
+}
+
+/* * Lightbox header div -------------------------------------------------- */
+.pb-lb .lb-box-header-div {
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+/* * lightbox content div -------------------------------------------------- */
+.pb-lb .lb-box-content-div {}
+
+/* * Lightbox message div -------------------------------------------------- */
+.pb-lb .lb-box-content-div .message-div {
+    padding: 1em;
+
+    font-size: 1rem;
+    text-align: center;
+}
+
+/* * Lightbox passed child div -------------------------------------------------- */
+.pb-lb .lb-box-content-div .passedChildren-div {}
+
+/* * Wrapper -------------------------------------------------- */
+.pb-lb .lb-box-content-div .btns-div {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 1em;
+
+    padding: 1em 0 0 0;
+}
+
+/* * text alignment -------------------------------------------------- */
+.text-align-start {
+    text-align: start;
+}
+.text-align-end {
+    text-align: end;
+}
+.text-align-left {
+    text-align: left;
+}
+.text-align-right {
+    text-align: right;
+}
+.text-align-center {
+    text-align: center;
+}
+.text-align-justify {
+    text-align: justify;
+}
+.text-align-match-parent {
+    text-align: match-parent;
+}

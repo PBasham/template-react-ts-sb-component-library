@@ -1,7 +1,7 @@
 {
-    "name": "@pbasham/template-react-ts-sb-component-library",
-    "version": "0.0.3",
-    "description": "React, typescript, and storybook component library template",
+    "name": "@pbasham/pb-lightboxes",
+    "version": "0.0.1",
+    "description": "React, typescript, and storybook component library for lightboxes",
     "scripts": {
         "rollup": "rollup -c",
         "test": "jest",
@@ -55,5 +55,8 @@
     "types": "dist/index.d.ts",
     "publishConfig": {
         "registry": "https://npm.pkg.github.com/pbasham"
+    },
+    "dependencies": {
+        "@pbasham/pb-buttons": "^1.0.2"
     }
 }
