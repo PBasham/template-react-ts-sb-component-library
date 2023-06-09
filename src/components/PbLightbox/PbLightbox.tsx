@@ -111,14 +111,14 @@ const PbLightbox: FC<PbLightboxProps> = (props: PbLightboxProps) => {
 
         title,
         titleSize,
-        titleAlignment,
+        titleAlignment = "center",
         titleColor,
         titleDivMargin,
         titleDivPadding,
 
         message,
         messageSize,
-        messageAlighment,
+        messageAlighment = "center",
         messageColor,
         messageDivMargin,
         messageDivPadding,
@@ -126,8 +126,8 @@ const PbLightbox: FC<PbLightboxProps> = (props: PbLightboxProps) => {
         hasOverlayBackground = true,
         overlayColor,
         overlayOpacity,
-        additionalOverlayClasses,
-        additionalWrapperClasses,
+        additionalOverlayClasses = "",
+        additionalWrapperClasses = "",
 
         padding,
         height,
@@ -135,9 +135,9 @@ const PbLightbox: FC<PbLightboxProps> = (props: PbLightboxProps) => {
         backgroundColor,
         borderRadius,
         boxShadow,
-        additionalLightboxClasses,
+        additionalLightboxClasses = "",
 
-        popupType,
+        popupType = "okay",
 
         btnAreaPadding,
         btnHorizontalAlignment,

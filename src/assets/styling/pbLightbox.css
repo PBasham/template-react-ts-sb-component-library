@@ -15,24 +15,30 @@
 
     z-index: 9999;
 }
+
 .pb-lb .overlay {
     position: fixed;
     width: 100vw;
     height: 100vh;
     background-color: rebeccapurple;
 }
+
 .pb-lb .overlay.wrapper-color {
     background-color: var(--color-wrapper-bg);
 }
+
 .pb-lb .overlay.no-wrapper-color {
     background-color: transparent;
 }
+
 /* * LightBox -------------------------------------------------- */
 .pb-lb .lb-box {
     padding: 1em;
-    width: clamp(300px, 80vw, 400px);    
-    box-shadow: 0 0 2px 1px var(--color-box-shadow);
+    width: clamp(300px, 80vw, 400px);
+    
     background-color: var(--color-box-bg);
+    box-shadow: 0 0 2px 1px var(--color-box-shadow);
+
     z-index: 9999;
 }
 
@@ -40,6 +46,7 @@
 .pb-lb .lb-box-header-div {
     font-size: 1.5rem;
 }
+
 /* * lightbox content div -------------------------------------------------- */
 .pb-lb .lb-box-content-div {}
 
@@ -67,21 +74,27 @@
 .text-align-start {
     text-align: start;
 }
+
 .text-align-end {
     text-align: end;
 }
+
 .text-align-left {
     text-align: left;
 }
+
 .text-align-right {
     text-align: right;
 }
+
 .text-align-center {
     text-align: center;
 }
+
 .text-align-justify {
     text-align: justify;
 }
+
 .text-align-match-parent {
     text-align: match-parent;
 }

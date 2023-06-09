@@ -15,39 +15,40 @@ const defaultParams: PbLightboxProps = {
         isLightboxVisible: true,
 
         title: undefined,
-        titleSize: "1.5rem",
+        titleSize: undefined,
         titleAlignment: "center",
         titleColor: undefined,
         titleDivMargin: undefined,
         titleDivPadding: undefined,
 
         message: undefined,
-        messageSize: "1rem",
+        messageSize: undefined,
         messageAlighment: "center",
         messageColor: undefined,
         messageDivMargin: undefined,
-        messageDivPadding: "1em",
+        messageDivPadding: undefined,
 
 
         hasOverlayBackground: true,
         overlayColor: undefined,
         overlayOpacity: undefined,
-        additionalWrapperClasses: undefined,
+        additionalOverlayClasses: "",
+        additionalWrapperClasses: "",
 
-        padding: "1em",
+        padding: undefined,
         height: undefined,
         width: undefined,
-        backgroundColor: "white",
+        backgroundColor: undefined,
         borderRadius: undefined,
-        boxShadow: "0 0 2px 1px rgba(149, 149, 149, 1)",
-        additionalLightboxClasses: undefined,
+        boxShadow: undefined,
+        additionalLightboxClasses: "",
 
         popupType: "okay",
 
-        btnAreaPadding: "1em 0 0 0",
-        btnHorizontalAlignment: "center",
-        btnVerticalAlignment: "center",
-        btnGap: "1em",
+        btnAreaPadding: undefined,
+        btnHorizontalAlignment: undefined,
+        btnVerticalAlignment: undefined,
+        btnGap: undefined,
         disableAllButtons: false,
         disableOkayButton: false,
         disableYesButton: false,
@@ -76,6 +77,7 @@ const standartOkTypeArgs: PbLightboxProps = {
     ...defaultParams,
     title: "Lightbox",
     message: "This is the message within the lightbox.",
+
 }
 StandardOkType.args = { ...standartOkTypeArgs }
 
